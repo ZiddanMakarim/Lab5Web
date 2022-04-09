@@ -364,3 +364,107 @@ Disini menggunakan HTML DOM dengan input type checkbox sebagai contoh gambar di 
 </body>
 </html>
 ```
+
+# Pertanyaan dan Tugas
+## 1). Buat script untuk mlakukan validasi pada isian form!
+
+## Jawaban
+### Hasil
+![form](img/form.png)
+
+Ini adalah contoh membuat form validasi dengan menggunakan script atau javascript terdapat beberapa pengondisian,jika data tidak di isi dengan lengkap maka akan terdapat prompt isi alamat anda dengan lengkap karena harus mengisi dengan lengkap seperti contoh gambar di atas
+
+![validasi](img/validasi.png)
+
+Sedangkan contoh gambar diatas adalah ketika data tidak di isi dengan lengkap,maka akan ada prompt isi alamat anda dengan lengkap,tidak akan bisa disubmit karena data belum lengkap.
+
+### Contoh Coding
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Form Validasi</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+        function validasiForm() {
+            var nama = document.getElementById("nama").value;
+            var email = document.getElementById("email").value;
+            var alamat = document.getElementById("alamat").value;
+            if (nama != "" && email!="" && alamat !="") {
+                return true;
+            }else{
+                alert('Isi Alamat Anda dengan lengkap !');
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+	<div class="login">
+		<form action="beranda.html" method="POST" onsubmit="return validasiForm()">
+			<div>
+				<label>Nama Lengkap:</label>
+				<input type="text" name="nama" id="nama" />
+			</div>
+			<div>
+				<label>Email:</label>
+				<input type="email" name="email" id="email" />
+			</div>
+			<div>
+				<label>Alamat:</label>
+				<textarea cols="40" rows="5" name="alamat" id="alamat"></textarea>
+			</div>
+			<div>
+				<input type="submit" value="Daftar" class="tombol">
+			</div>
+		</form>
+	</div>
+</body>
+</html>
+```
+
+```css
+body {
+    background: #898e90;
+    font-family: sans-serif;
+    padding: 100px;
+  }
+  
+  
+
+  .login {
+    padding: 1em;
+    margin: 2em auto;
+    width: 30em;
+    background: #fff;
+    border-radius: 3px;
+  }
+  
+  label {
+    font-size: 10pt;
+    color: #555;
+  } 
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 8px;
+    width: 95%;
+    background: #efefef;
+    border: 0;
+    font-size: 10pt;
+    margin: 6px 0px; 
+  }
+   
+  .tombol {
+    background: #3498db;
+    color: #fff;
+    border: 0;
+    padding: 5px 8px;
+  } 
+   .tombol:hover{
+      background-color: #555;
+  }
+```
+
+# TERIMA KASIH
